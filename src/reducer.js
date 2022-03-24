@@ -1,16 +1,20 @@
-import { data } from "./gifs";
-
+// import { data } from "./gifs";
+import { ADD_ALL_GIFS } from "./actionType";
 const initialState = {
-    gifs: data,
-    loading: false,
-    err: '',
-}
+//   gifs: [],
+  title: '',
+//   url: '',
+  // loading: false,
+  // err: '',
+};
 
-const reducer = (state=initialState, action) => {
-    switch(action.type) {
-        default: 
-        return state;
-    }
-}
+const addGifReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_ALL_GIFS:
+      return { ...state, title: action.payload };
+    default:
+      return state;
+  }
+};
 
-export default reducer;
+export default addGifReducer;
